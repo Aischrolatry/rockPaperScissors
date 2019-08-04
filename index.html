@@ -5,113 +5,44 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers&display=swap">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <div id="container">
+            <div id="header-container">
+              <div id="header-rock" class="header-title header-text">Rock</div>
+              <div class="header-title header-spacer">*</div>
+              <div id="header-paper" class="header-title header-text">Paper</div>
+              <div class="header-title header-spacer">*</div>
+              <div id="header-scissors" class="header-title header-text">Scissors</div>
+            </div>
+            <div id="game-container">
+              <div id="score-container">
+                <div id="score-header">Score</div>
+                <div id="your-score" class="score">0</div>
+                <div id="score-spacer">-</div>
+                <div id="comp-score">0</div>
+                <button type="button" id="reset-button" class="button">Reset</button>
+              </div>
+              <div id="selection-container">
+                <div id="your-selection" class="selection-img-container">?</div>
+                <div id="go-button"><button id="go" type="button" class="button" disabled>Go!</button></div>
+                <div id="next-button">
+                  <button type="button" id="next-round" class="button">Next Round</button>
+                  <div id="result-text">You won!</div>
+                </div>
+                <div id="comp-selection" class="selection-img-container">?</div>
+              </div>
+              <div id="choice-container">
+                <div id="choice-header">Make your choice!</div>
+                <button type="button" id="choice-rock" class="choice-options">Rock</button>
+                <button type="button" id="choice-paper" class="choice-options">Paper</button>
+                <button type="button" id="choice-scissors" class="choice-options">Scissors</button>
+              </div>
+            </div>
+          </div>
         
-        
-        <script>
-            function playRound(playerSelection, computerSelection) {
-                const win = `You chose ${playerSelection} the computer chose ${computerSelection}. Congratulations! You Won!`;
-                const draw = `You chose ${playerSelection} the computer chose ${computerSelection}. It was a draw`;
-                const lose = `You chose ${playerSelection} the computer chose ${computerSelection}. Too bad, you lost!`;
-                switch (playerSelection) {
-                    case 'rock':
-                        if(computerSelection === 'rock') {
-                            return draw;
-                        } else if (computerSelection === 'paper') {
-                            return lose;
-                        } else {
-                            return win;
-                        }
-                        break;
-                    case 'paper':
-                        if(computerSelection === 'rock') {
-                            return win;
-                        } else if (computerSelection === 'paper') {
-                            return draw;
-                        } else {
-                            return lose;
-                        }
-                        break;
-                    case 'scissors':
-                        if(computerSelection === 'rock') {
-                            return lose;
-                        } else if (computerSelection === 'paper') {
-                            return win;
-                        } else {
-                            return draw;
-                        }
-                        break;
-                    default:
-                        return "that didn't make sense!"
-                }
-            }
-
-            function computerPlay() {
-                computerPick = Math.floor(Math.random() * 3) + 1;
-                switch (computerPick) {
-                    case 1:
-                        return 'rock';
-                        break;
-                    case 2:
-                        return 'paper';
-                        break;
-                    default:
-                        return 'scissors';
-                }
-            }
-
-            function game() {
-                let playerScore = 0;
-                let computerScore = 0;
-                for (i = 0; i < 5; i++) {
-                    let playerSelection = prompt("Choose rock, paper or scissors?");
-                    let computerSelection = computerPlay();
-                    if (playRound(playerSelection, computerSelection) === "that didn't make sense!") {
-                        letPlayerSelection = prompt("Please make sure you type it correctly! rock, paper or scissors!")
-                    }
-                    playerScore = calculateScore(playerScore, playerSelection, computerSelection);
-                    computerScore = calculateScore(computerScore, computerSelection, playerSelection);
-                    console.log(playRound(playerSelection, computerSelection))
-                    if (playerScore > computerScore) {
-                        console.log(`You are winning by ${playerScore} to ${computerScore}`)
-                    } else if (playerScore < computerScore) {
-                        console.log(`You are losing by ${playerScore} to ${computerScore}`)
-                    } else {
-                        console.log(`You are level on ${playerScore} points each`)
-                    }
-                    console.log(`There are ${4 - i} games remaining.`)
-                }
-            }
-
-            function calculateScore(currentScore, scorerSelection, opponentSelection) {
-                switch (scorerSelection) {
-                    case 'rock':
-                        if(opponentSelection === 'scissors') {
-                            return ++currentScore;
-                        } else {
-                            return currentScore;
-                        }
-                        break;
-                    case 'paper':
-                        if(opponentSelection === 'rock') {
-                            return ++currentScore;
-                        } else {
-                            return currentScore;
-                        }
-                        break;
-                    case 'scissors':
-                        if(opponentSelection === 'paper') {
-                            return ++currentScore;
-                        } else {
-                            return currentScore;
-                        }
-                        break;
-                    default:
-                        return "that didn't make sense!"
-                }
-            }
-        </script>
+        <script src="rockPaperScissors.js"></script>
     </body>
 </html>

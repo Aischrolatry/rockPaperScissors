@@ -1,0 +1,218 @@
+#container {
+    width: 100vw;
+    height: 900px;
+    background-color: #29282f;
+    display: grid;
+    grid-template-rows: 100px 780px;
+    grid-row-gap: 20px;
+  }
+  
+  #header-container {
+    width: 100vw;
+    height: 100px;
+    background-color: #120f1f;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .header-title {
+    font-family: "Bangers";
+    font-size: 90px;
+  }
+  
+  #header-rock {
+    color: #2f06fb;
+  }
+  
+  #header-paper {
+    color: #fe0037;
+  }
+  
+  #header-scissors {
+    color: #58fd00;
+  }
+  
+  .header-spacer {
+    color: #ffcd07;
+  }
+  
+  #game-container {
+    width: 100vw;
+    height: 780px;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    grid-template-rows: 310px 300px 130px;
+    grid-row-gap: 20px;
+  }
+  
+  #score-container {
+    width: 50vw;
+    height: 310px;
+    background-color: #17151f;
+    font-family: "Bangers";
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 5fr 1fr 5fr;
+    grid-template-rows: 80px 130px 80px;
+    grid-template-areas:
+      "title title title"
+      "your-score spacer comp-score"
+      ". reset .";
+  }
+  
+  #score-header {
+    grid-area: title;
+    font-size: 50px;
+    color: white;
+  }
+  
+  #your-score {
+    grid-area: your-score;
+    font-size: 100px;
+    color: white;
+  }
+  
+  #score-spacer {
+    grid-area: spacer;
+    font-size: 75px;
+    color: white;
+  }
+  
+  #comp-score {
+    grid-area: comp-score;
+    font-size: 100px;
+    color: white;
+  }
+  
+  #reset-button {
+    grid-area: reset;
+    cursor: pointer;
+  }
+  
+  .disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+  
+  #selection-container {
+    width: 80vw;
+    height: 300px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 7fr 1fr 7fr;
+  }
+  
+  .selection-img-container {
+    height: 300px;
+    width: 300px;
+    background-color: #17151f;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: "Bangers";
+    font-size: 70px;
+  }
+  
+  #your-selection {
+    color: #ffcd07;
+  }
+  
+  #comp-selection {
+    color: #ffcd07;
+  }
+  
+  #go-button {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 5fr 1fr;
+    height: 200px;
+    width: 300px;
+  }
+  
+  #next-button {
+    display: none;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 5fr 1fr;
+    height: 200px;
+    width: 300px;
+  }
+  #result-text {
+    font-family: 'Bangers';
+    font-size: 30px;
+  }
+  
+  .button {
+    background-color: #58fd00;
+    color: #fe0037;
+    border: none;
+    padding: 15px 32px;
+    font-size: 50px;
+    font-family: "Bangers";
+  }
+  
+  .button:disabled {
+    opacity: 0.2;
+  }
+  
+  #choice-container {
+    width: 40vw;
+    height: 110px;
+    background-color: #17151f;
+    font-family: "Bangers";
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 60px;
+    grid-template-areas:
+      "title title title"
+      "choice-rock choice-paper choice-scissors";
+  }
+  
+  #choice-header {
+    grid-area: title;
+    font-size: 40px;
+    color: white;
+  }
+  
+  .choice-options {
+    background-color: #17151f;
+    font-family: 'Bangers';
+    width: 8vw;
+    height: 50px;
+    font-size: 40px;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .choice-options:disabled {
+    opacity: 0.2;
+    cursor: auto;
+  }
+  
+  #choice-rock {
+    grid-area: choice-rock;
+    color: #2f06fb;
+    border: 2px solid #2f06fb;
+  }
+  
+  #choice-paper {
+    grid-area: choice-paper;
+    color: #fe0037;
+    border: 2px solid #fe0037;
+  }
+  
+  #choice-scissors {
+    grid-area: choice-scissors;
+    color: #58fd00;
+    border: 2px solid #58fd00;
+  }
